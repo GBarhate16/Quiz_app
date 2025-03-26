@@ -15,11 +15,9 @@
 
 ## Usage
 
-1. Explore the live demo of the Quiz Application [here](https://quiz-app-django.onrender.com/).
+1. Sign in to access quizzes and start answering questions.
 
-2. Sign in to access quizzes and start answering questions.
-
-3. Choose a quiz, answer questions, and receive instant result updates.
+2. Choose a quiz, answer questions, and receive instant result updates.
 
 
 ## Tech Stack
