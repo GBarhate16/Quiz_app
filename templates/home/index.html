@@ -7,7 +7,7 @@ Quiz App
 <div class="container-fluid">
     <div class="row justify-content-center">
         {% for category in categories %}
-        <div class="col-md-4 col-sm-6 mb-4"> <!-- Responsive column -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4"> <!-- Adjusted column sizes for better responsiveness -->
             <form action="" class=" ">
                 <div class="card box_shadow">
                     <img src="{{category.image.url}}" class="card-img-top card_image" alt="...">
@@ -32,22 +32,6 @@ Quiz App
         </div>
         {% endfor %}
     </div>
-    <!-- <form action="" class="form-control box_shadow p-3">
-                    <label for="selectCategory " class="mb-2 fw-semibold">Select Category</label>
-                    <select name="category" id="selectCategory" class="form-control">
-                        <option value="">Choose</option>
-                        {% for category in categories %}
-                        <option value="{{category.name}}">{{category.name|title}} </option>
-                        {% endfor %}
-
-                    </select>
-                    <div class="d-grid mt-4">
-                        <button class="btn btn-primary">Submit</button>
-                    </div>
-                </form> -->
-
-
-</div>
 </div>
 
 {% endblock body %}

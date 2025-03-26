@@ -20,7 +20,19 @@ html,body,.background_div{
 
 @media (max-width: 768px) {
     .card_image {
-        height: 8rem;
+        height: auto;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .card {
+        margin: 0 10px;
     }
 }
 

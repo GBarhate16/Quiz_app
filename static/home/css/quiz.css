@@ -24,4 +24,16 @@
     .answerList {
         font-size: 0.9rem; /* Adjust font size for smaller screens */
     }
+    .form-check-label {
+        font-size: 0.9rem; /* Adjust label size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .answerList {
+        font-size: 0.8rem; /* Further adjust font size for extra small screens */
+    }
+    .form-check-label {
+        font-size: 0.8rem; /* Further adjust label size for extra small screens */
+    }
 }
