@@ -1,0 +1,51 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'home/css/quiz.css' %}">
+{% endblock css %}
+{% block body %}
+
+<div class='container'>
+    <div class="mb-4 fw-semibold text-center d-flex justify-content-between form-control p-3 text-dark">
+        <h5> Quiz On {{category|title}}</h5>
+        <h5>Marks : <span id="marks">{{quiz.marks}}</span>/{{quiz.category.total_marks}}</h5>
+    </div>
+    {% for question in page_obj.object_list %}
+    <form action="" class="mt-4 p-4 text-capitalize form-control box_shadow">
+        <div class="fw-bold text-center fs-5 d-flex justify-content-between p-2">
+            <span id="{{question.uid}}" class="questionP">{{page_obj.number}}. {{question.question}}?</span>
+            <span>{{question.mark}} Marks</span>
+        </div>
+
+        <div class="form-check">
+            {% for answer in question.answers.all %}
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-primary mt-3 answerList">
+                    <input class="form-check-input me-1 answerInput" value='{{answer.answer}}' type="radio"
+                        id="{{answer.uid}}" name="answerInput">
+                    <label class="form-check-label d-block fw-semibold" for="{{answer.uid}}">
+                        {{answer.answer}}</label>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+
+        <div class="mt-2 p-3 d-flex justify-content-between">
+            {% if page_obj.has_previous %}
+            <a class="btn btn-outline-primary" href="?page={{page_obj.previous_page_number}}&category={{category}}">
+                Previous
+            </a>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <a class="btn btn-primary" href="?page={{page_obj.next_page_number}}&category={{category}}">Next</a>
+            {% endif %}
+        </div>
+    </form>
+    {% endfor %}
+</div>
+
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'home/js/quiz.js' %}"></script>
+{% endblock js %}

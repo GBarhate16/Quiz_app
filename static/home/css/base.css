@@ -1,0 +1,27 @@
+.center_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert{
+    margin:0;
+    border-radius:0;
+}
+
+html,body,.background_div{
+    height: 100%;
+}
+.card_image{
+    width: 100%;
+    height: auto;
+    margin: auto;   
+}
+
+@media (max-width: 768px) {
+    .card_image {
+        height: 8rem;
+    }
+}
+
+
